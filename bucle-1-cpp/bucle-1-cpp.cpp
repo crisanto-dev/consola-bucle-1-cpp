@@ -1,20 +1,58 @@
 // bucle-1-cpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Autor: Cristian Antonio Escalante Hernandez
+// Github: crisanto-dev
+// Fecha: 11/19/2020
+// Problema:
+/* Realice un programa que pida un numero n e imprima una serie n veces.
+   Ejemplo: 3
+   3, 6, 9
+*/
 
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+
+	cout << "Autor: Cristian Antonio Escalante Hernandez\n";
+	cout << "Github: crisanto-dev\n";
+	cout << "Problema: Realice un programa que pida un numero n e imprima una serie n veces.\n";
+	cout << "Ejemplo: 3\n 3,6,9\n";
+
+	int numero = 0;
+	int multiplicando = 1;
+	bool bandera = true;
+
+	do
+	{
+		cout << "Escriba un numero entero mayor que 0: ";
+		cin >> numero;
+		if (numero > 0)
+		{
+			bandera = false;
+		}
+		else {
+			cout << "Numero ingresado no valido\nIntentelo de nuevo\n\n";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+	} while (bandera);
+
+	cout << "Procesando...\n";
+	system("PAUSE");
+	printf("el resultado para %d es: ", numero);
+
+	for (int i = 0; i < numero; i++)
+	{
+		if (i != 0 && i != numero) 
+			cout << ", ";
+
+		cout << numero * multiplicando++ ;
+
+	}
+	cout << "\n";
+	cout << "Fin del programa\n";
+	system("PAUSE");
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
